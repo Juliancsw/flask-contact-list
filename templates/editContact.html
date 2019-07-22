@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+    </head>
+    <body>
+        <div class = "container clearfix">
+            <div class="card row " style="margin-top:30px;">
+                <div class="card-header">
+                    <b>Edit Contact</b>
+                </div>
+                <div class="card-body">
+                    <form action = "{{ url_for('editContact', contact_id=contact._id) }}" method="POST">
+                        <div class="form-group row">
+                            <label class="col-form-label col-2" for="name">Name</label>
+                            <input type="text" class="form-control col-3" id="name" name="name" value="{{ contact.name }}" required>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-2" for="phone">Phone</label>
+                            <input type="text" class="form-control col-3" id="phone" name="phone" value="{{ contact.phone_no }}" required>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-2" for="address">Address</label>
+                            <input type="text" class="form-control col-3" id="address" name="address" value="{{ contact.address }}" required>
+                        </div>
+                        <input  class="btn btn-primary" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
